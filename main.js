@@ -1,10 +1,7 @@
 // // variables for the 'clear' and 'screen' blocks
 // let screen = document.getElementById("screen");
 // let clear = document.getElementById("clear");
-// let buttonFunction = document.getElementByClass("button");
 //
-// // adding 'click' event listener to buttons
-// buttonFunction.addEventListener("click", buttonValue);
 //
 // function buttonValue() {
 //   for(let i = 0; i < )
@@ -25,10 +22,60 @@
 //
 // let arrayValues = document.getElementByClass()
 
-// add innerHTML to screen
-let screenEl = document.querySelector("h2");
-screenEl.innerHTML = "WooHoo!";
+//
+// function updateDisplay(num) {
+//   screenEl.innerHTML = num;
+// }
+//
+// // adding 'click' event listener to buttons
+// let buttonFunction = document.querySelectorAll("button");
+//
+//
+// buttonFunction.addEventListener("click", buttonValue);
+//
+// function buttonValue(newNum) {
+//   let buttonNumber = buttonFunction.value;
+//   screenEl.innerHTML = buttonNumber;
+// }
 
-function updateDisplay(num) {
-  screenEl.innerHTML = num;
+
+
+// document.getElementByClass("button").onclick = function() {
+//
+// }
+
+
+// let screen = document.getElementById("screen");
+let screen = document.querySelector("h2");
+let num = document.querySelectorAll("button");
+
+let length = num.length;
+
+for(let i = 0; i < length; i++) {
+  num[i].addEventListener("click", function() {
+    let number = this.value;
+    let display = screen.innerHTML += number;
+  }
+
+)
 }
+
+let operators = document.querySelectorAll("operator");
+let opLength = operators.length;
+
+for(let t = 0; t < opLength; t++) {
+  opLength[i].addEventListener("click", function(){
+    let opInputs = this.value;
+    let display = screen.innerHTML += opInputs;
+  }
+
+)
+}
+
+// document.querySelector("equal").addEventListener("click" function() {
+//   if(screen.innerHTML === output) {
+//     screen.innerHTML = eval(output);
+//   } else {
+//     screen.innerHTML = "";
+//   }
+// } );
