@@ -42,11 +42,12 @@ clearValue.addEventListener("click", function() {
   screen.innerHTML = "";
 });
 
+// I left this trying to figure out how to create a function that will evaluate the 'screen.innerHTML' to the total and then will display that value on the screen. I kept getting totals that equaled [object] so I tried using parseInt on the value but then the screen returned 'NAN'
 let evaluate = document.querySelector("#equal");
 evaluate.addEventListener("click", function(){
   let finalVal = eval(screen);
   let parseVal = parseInt(finalVal);
-  let display = screen.innerHTML += finalVal;
+  screen.innerHTML = parseVal;
   // console.log(finalVal);
   // let display = parseInt(finalVal);
   // screen.innerHTML = eval(finalVal);
