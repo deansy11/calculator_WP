@@ -1,6 +1,5 @@
 let screen = document.querySelector("h2");
 let num = document.querySelectorAll(".button");
-
 let length = num.length;
 
 for(let i = 0; i < length; i++) {
