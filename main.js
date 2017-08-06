@@ -5,8 +5,7 @@ let length = num.length;
 
 for(let i = 0; i < length; i++) {
   num[i].addEventListener("click", function() {
-    // could also use 'this.value' instead of num[i]
-    let number = num[i].value;
+    let number = this.value;
     screen.innerHTML += number;
   }
 )};
@@ -16,9 +15,8 @@ let opLength = operators.length;
 
 for(let t = 0; t < opLength; t++) {
   operators[t].addEventListener("click", function(){
-  // could also use 'this.value' instead of num[i]
-    let opInputs = operators[t].value;
-    screen.innerHTML += opInputs;
+    let opInputs = this.value;
+    screen.innerHTML += ` ${opInputs} `;
   }
 )};
 
@@ -30,7 +28,16 @@ clearValue.addEventListener("click", function() {
 let evaluate = document.querySelector("#equal");
 evaluate.addEventListener("click", function(e){
   e.preventDefault();
-  let screenTotal = screen.textContent;
-  let finalVal = eval(screenTotal);
+  let equal = screen.innerHTML.split(" ");
+  let finalVal = 0;
+  if (equal[1] === "/") {
+    finalVal = parseInt(equal[0]) / parseInt(equal[2]);
+  } else if (equal[1] === "*") {
+    finalVal = parseInt(equal[0]) * parseInt(equal[2]);
+  } else if (equal[1] === "-") {
+    finalVal = parseInt(equal[0]) - parseInt(equal[2]);
+  } else if (equal[1] === "+") {
+    finalVal = parseInt(equal[0]) + parseInt(equal[2]);
+  }
   screen.innerHTML = finalVal;
 });
